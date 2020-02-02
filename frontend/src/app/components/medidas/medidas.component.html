@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="row">
+        <div class="col s7">
+            <table>
+                <thead>
+                    <th>Nombre del Sensor</th>
+                    <th>Temperatura</th>
+                    <th>Humedad</th>
+                    <th>Admin</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let medida of medidaService.medidas">
+                        <td> {{ medida.nameSensor }} </td>
+                        <td> {{ medida.temp }} </td>
+                        <td> {{ medida.hum }} </td>
+                        <td>
+                            <a (click)="editMedida(medida)">
+                                <i class="material-icons">edit</i>
+                            </a>
+                            <a (click)="deleteMedida(medida._id)">
+                                <i class="material-icons">delete</i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col s7">
+            <table>
+                <thead>
+                    <th>Temperatura promedio</th>
+                </thead>
+                <tbody>
+                    <td> {{ tempPromedio }} </td>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col s5">
+            <div class="card">
+                <div class="card-content">
+                    <form #medidaForm="ngForm">
+                        <div class="row">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="medidaService.selectedMedida._id">
+                            
+                            <h4 class="centerText">Registro de medida</h4>
+
+                            <div class="input-field col s12">
+                                <input type="text" name="nameSensor" #name="ngModel" 
+                                [(ngModel)]="medidaService.selectedMedida.nameSensor"
+                                placeholder="Nombre del sensor">
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input type="text" name="temp" #temp="ngModel" 
+                                [(ngModel)]="medidaService.selectedMedida.temp"
+                                placeholder="Temperatura">
+                            </div>
+
+                            <div class="input-field col s12">
+                                <input type="text" name="hum" #hum="ngModel" 
+                                [(ngModel)]="medidaService.selectedMedida.hum"
+                                placeholder="Humedad">
+                            </div>
+
+                            <div class="card-action center">
+                                <div class="input-field col s12">
+                                    <button class="btn center" (click)="addMedida(medidaForm)">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form> <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="medidaService.selectedMedida._id">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
