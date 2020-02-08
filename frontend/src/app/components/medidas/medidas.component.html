@@ -1,40 +1,40 @@
 <div class="container">
     <div class="row">
-        <div class="col s7">
+        <div class="col s10">
             <table>
                 <thead>
-                    <th>Nombre del Sensor</th>
-                    <th>Temperatura</th>
-                    <th>Humedad</th>
-                    <th>Admin</th>
+                    <th class="centerText">Nombre del Sensor</th>
+                    <th class="centerText">Temperatura</th>
+                    <th class="centerText">Humedad</th>
                 </thead>
                 <tbody>
                     <tr *ngFor="let medida of medidaService.medidas">
-                        <td> {{ medida.nameSensor }} </td>
-                        <td> {{ medida.temp }} </td>
-                        <td> {{ medida.hum }} </td>
-                        <td>
-                            <a (click)="editMedida(medida)">
-                                <i class="material-icons">edit</i>
-                            </a>
-                            <a (click)="deleteMedida(medida._id)">
-                                <i class="material-icons">delete</i>
-                            </a>
-                        </td>
+                        <td class="centerText"> {{ medida.nameSensor }} </td>
+                        <td class="centerText"> {{ medida.temp }} </td>
+                        <td class="centerText"> {{ medida.hum }} </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="col s7">
+        <div class="col s10">
             <table>
                 <thead>
-                    <th>Temperatura promedio</th>
+                    <th class="centerText"> Temperatura promedio </th>
+                    <th class="centerText"> Humedad promedio </th>
+                    <th class="centerText"> Cantidad de sensores </th>
                 </thead>
                 <tbody>
-                    <td> {{ tempPromedio }} </td>
+                    <td class="centerText"> {{ tempPromedio }} </td>
+                    <td class="centerText"> {{ humPromedio }} </td>
+                    <td class="centerText"> {{ nSensores }} </td>
                 </tbody>
             </table>
+            <div class="card-action center">
+                <div class="input-field col s12">
+                    <button class="btn center" (click)="calcPromedios()">Calcular</button>
+                </div>
+            </div>
         </div>
 
         <div class="col s5">

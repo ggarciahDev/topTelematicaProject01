@@ -12,28 +12,30 @@ import { Subscriber } from 'rxjs';
 })
 export class MedidasComponent implements OnInit {
   tempPromedio;
+  humPromedio;
+  nSensores;
 
   constructor(private medidaService: MedidaService) { }
 
   ngOnInit() {
     this.getMedidas();
-    //this.tempPromedio = this.calcTempProm(this.medidaService.medidas);
   }
 
-  calcTempProm(medidas: Medida[]){
-    var tempProm = 0;
-    var nDatos = 0;
-
-    console.log(medidas);
+  calcPromedios(){
+    let medidas = this.medidaService.medidas;
+    this.tempPromedio = 0;
+    this.humPromedio = 0;
+    this.nSensores = 0;
 
     for(let medida of medidas){
-      tempProm += medida.temp;
-      nDatos++;
+      this.tempPromedio += medida.temp;
+      this.humPromedio += medida.hum;
+
+      this.nSensores++;
     }
 
-    tempProm = tempProm / nDatos;
-    
-    return tempProm;
+    this.tempPromedio = this.tempPromedio / this.nSensores;
+    this.humPromedio = this.humPromedio / this.nSensores;
   }
 
   resetForm(form?: NgForm){
