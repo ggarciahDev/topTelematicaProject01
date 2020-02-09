@@ -1,79 +1,52 @@
-<div class="container">
-    <div class="row">
-        <div class="col s10">
-            <table>
-                <thead>
-                    <th class="centerText">Nombre del Sensor</th>
-                    <th class="centerText">Temperatura</th>
-                    <th class="centerText">Humedad</th>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let medida of medidaService.medidas">
-                        <td class="centerText"> {{ medida.nameSensor }} </td>
-                        <td class="centerText"> {{ medida.temp }} </td>
-                        <td class="centerText"> {{ medida.hum }} </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<body>
+    <mat-toolbar color="primary" class="app-header">
+        <div><a target="_blank" class="positronx">Central De Sensores</a></div>
+        <span class="nav-tool-items">
+          <a mat-button mat-raised-button routerLink="/" routerLinkActive="active">Salir</a>
+        </span>
+    </mat-toolbar>
 
-        <div class="col s10">
-            <table>
-                <thead>
-                    <th class="centerText"> Temperatura promedio </th>
-                    <th class="centerText"> Humedad promedio </th>
-                    <th class="centerText"> Cantidad de sensores </th>
-                </thead>
-                <tbody>
-                    <td class="centerText"> {{ tempPromedio }} </td>
-                    <td class="centerText"> {{ humPromedio }} </td>
-                    <td class="centerText"> {{ nSensores }} </td>
-                </tbody>
-            </table>
-            <div class="card-action center">
-                <div class="input-field col s12">
-                    <button class="btn center" (click)="calcPromedios()">Calcular</button>
+    <br><br><br><br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s10">
+                <table>
+                    <thead>
+                        <th class="centerText">Nombre del Sensor</th>
+                        <th class="centerText">Temperatura</th>
+                        <th class="centerText">Humedad</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let medida of medidaService.medidas">
+                            <td class="centerText"> {{ medida.nameSensor }} </td>
+                            <td class="centerText"> {{ medida.temp }} </td>
+                            <td class="centerText"> {{ medida.hum }} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <div class="col s10">
+                <table>
+                    <thead>
+                        <th class="centerText"> Temperatura promedio </th>
+                        <th class="centerText"> Humedad promedio </th>
+                        <th class="centerText"> Cantidad de sensores </th>
+                    </thead>
+                    <tbody>
+                        <td class="centerText"> {{ tempPromedio }} </td>
+                        <td class="centerText"> {{ humPromedio }} </td>
+                        <td class="centerText"> {{ nSensores }} </td>
+                    </tbody>
+                </table>
+                <div class="card-action center">
+                    <div class="input-field col s12">
+                        <button class="btn center" (click)="calcPromedios()">Calcular</button>
+                    </div>
                 </div>
             </div>
+    
         </div>
-
-        <div class="col s5">
-            <div class="card">
-                <div class="card-content">
-                    <form #medidaForm="ngForm">
-                        <div class="row">
-                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="medidaService.selectedMedida._id">
-                            
-                            <h4 class="centerText">Registro de medida</h4>
-
-                            <div class="input-field col s12">
-                                <input type="text" name="nameSensor" #name="ngModel" 
-                                [(ngModel)]="medidaService.selectedMedida.nameSensor"
-                                placeholder="Nombre del sensor">
-                            </div>
-
-                            <div class="input-field col s12">
-                                <input type="text" name="temp" #temp="ngModel" 
-                                [(ngModel)]="medidaService.selectedMedida.temp"
-                                placeholder="Temperatura">
-                            </div>
-
-                            <div class="input-field col s12">
-                                <input type="text" name="hum" #hum="ngModel" 
-                                [(ngModel)]="medidaService.selectedMedida.hum"
-                                placeholder="Humedad">
-                            </div>
-
-                            <div class="card-action center">
-                                <div class="input-field col s12">
-                                    <button class="btn center" (click)="addMedida(medidaForm)">Enviar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form> <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="medidaService.selectedMedida._id">
-                </div>
-            </div>
-        </div>
-
     </div>
-</div>
+</body>

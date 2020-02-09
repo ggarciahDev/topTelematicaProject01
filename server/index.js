@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors({origin: 'http://localhost:4200'}));
 
 //Routes
-app.use(require('./routes/sensor'));
+app.use(require('./routes/routes'));
 
 // Starting the server
 

@@ -1,0 +1,30 @@
+<body>
+  <mat-toolbar color="primary" class="app-header">
+    <div><a target="_blank" class="positronx">Central De Sensores</a></div>
+    <span class="nav-tool-items">
+      <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Register</a>
+    </span>
+  </mat-toolbar>
+  
+  <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Log in</mat-card-title>
+      </mat-card-header>
+  
+      <form #userForm="ngForm" class="example-form">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input type="text" [(ngModel)]="userEmail" name="email" matInput placeholder="Email">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input name="password" [(ngModel)]="userPassword" type="password" matInput placeholder="Password">
+          </mat-form-field>
+        </mat-card-content>
+        <button (click)="login()" mat-stroked-button color="accent" class="btn-block">Log in</button>
+      </form>
+    </mat-card>
+  </div>
+</body>

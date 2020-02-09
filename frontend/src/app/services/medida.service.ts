@@ -14,6 +14,14 @@ export class MedidaService {
   constructor(private http: HttpClient) { 
     this.selectedMedida = new Medida();  
   }
+  
+  loginUser(email:string, password:string){
+    return this.http.post(this.URL_API + `/login`, {email, password});
+  }
+
+  registerUser(name:string, email:string, password:string){
+    return this.http.post(this.URL_API + `/register`, {name,email,password});
+  }
 
   /**
    * Devuelve un arreglo de medidas
