@@ -36,8 +36,8 @@
 
 ### 5 ESPECIFICACIÓN DE LOS SERVICIOS API REST DEL BACKEND
 
-Json Web Token: Para generar un token único por cada usuario con el cual pueda navegar por las distintas secciones de la página.
+Para la autenticación de los servicios API REST se utilizó bcrypt para encriptar las contraseñas de los usuarios en la base de datos y Json Web Token para generar un token único por usuario para navegar libremente por las distintas secciones de la página.
 	
-### 6 AUTENTICACIÓN DE LOS SERVICIOS API REST
+### 6 AUTENTICACIÓN DE LOS SERVICIOS API REST DEL FRONTEND
 
-Json Web Token: Para generar un token único por cada usuario con el cual pueda navegar por las distintas secciones de la página.
+El token generado por cada usuario se utiliza en el proceso de autorización de envío de datos por medio de un dispositivo arduino.
