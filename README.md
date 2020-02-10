@@ -1,10 +1,10 @@
 # Instalación
 
-* En la carpeta topTelematicaProject01, ejecutar:
+* En la carpeta ***topTelematicaProject01***, ejecutar:
 
   `$ npm install`
   
-* En la carpeta topTelematicaProject01/frontend, ejecutar:
+* En la carpeta ***topTelematicaProject01/frontend***, ejecutar:
 
   `$ npm install`
   
