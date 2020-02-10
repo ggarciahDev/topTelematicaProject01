@@ -18,7 +18,7 @@
 
 ### 4.1 TECNOLOGÍA DE DESARROLLO EN EL BACKEND
 
-* 7MongoDB
+* MongoDB
 
 * Express
 
