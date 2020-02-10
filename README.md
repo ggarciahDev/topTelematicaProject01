@@ -4,7 +4,11 @@
 
   `$ npm install`
   
-* En la carpeta ***topTelematicaProject01/frontend***, ejecutar:
+  * En una terminal, ejecutar:
+  
+  `$ npm run dev`
+  
+* En la carpeta ***topTelematicaProject01/frontend***, ejecutar en otra terminal:
 
   `$ npm install`
   
