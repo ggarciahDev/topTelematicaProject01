@@ -34,10 +34,10 @@
 
 * Angular Material
 
-## 5 ¿CUALES SON Y CUAL ES LA ESPECIFICACIÓN DE LOS SERVICIOS API REST DEL BACKEND?
+### 5 ¿CUALES SON Y CUAL ES LA ESPECIFICACIÓN DE LOS SERVICIOS API REST DEL BACKEND?
 
-	Json Web Token: Para generar un token único por cada usuario con el cual pueda navegar por las distintas secciones de la página.
+Json Web Token: Para generar un token único por cada usuario con el cual pueda navegar por las distintas secciones de la página.
 	
-## 6 ¿CÓMO REALIZÓ LA AUTENTICACIÓN DE LOS SERVICIOS API REST?
+### 6 ¿CÓMO REALIZÓ LA AUTENTICACIÓN DE LOS SERVICIOS API REST?
 
 Json Web Token: Para generar un token único por cada usuario con el cual pueda navegar por las distintas secciones de la página.
