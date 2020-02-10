@@ -12,6 +12,8 @@
   
   `$ npm start`
   
+**Nota: ejecutar mongod.exe antes de ejecutar `npm run dev`**
+  
 # Acerca del proyecto
 
 ### 4.1 TECNOLOGÍA DE DESARROLLO EN EL BACKEND
